@@ -1,0 +1,1809 @@
+{
+  "generated_at": "2026-09-23T14:13:40.662134+00:00",
+  "sources": {
+    "activity_file": "/home/goblin/Documents/OEG Dev Folder/Active-OEG-Repositories/activity_20260923_123253/repository_activity.json",
+    "full_run_dir": "/home/goblin/Documents/OEG Dev Folder/Active-OEG-Repositories/test_oeg_results/full_run/20260923",
+    "run_report_file": "/home/goblin/Documents/OEG Dev Folder/Active-OEG-Repositories/test_oeg_results/full_run/20260923/run_report.json"
+  },
+  "summary": {
+    "active_repositories": 39,
+    "active_repositories_with_findings": 13,
+    "total_pitfalls": 5,
+    "total_warnings": 16,
+    "total_contributors": 180
+  },
+  "repositories": [
+    {
+      "name": "github_com_dgarijo_widoco",
+      "url": "https://github.com/dgarijo/Widoco",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 591,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        },
+        {
+          "login": "dependabot[bot]",
+          "type": "Bot",
+          "contributions": 78,
+          "html_url": "https://github.com/apps/dependabot",
+          "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4"
+        },
+        {
+          "login": "jgeluk",
+          "type": "User",
+          "contributions": 18,
+          "html_url": "https://github.com/jgeluk",
+          "avatar_url": "https://avatars.githubusercontent.com/u/864726?v=4"
+        },
+        {
+          "login": "Zack-83",
+          "type": "User",
+          "contributions": 18,
+          "html_url": "https://github.com/Zack-83",
+          "avatar_url": "https://avatars.githubusercontent.com/u/37865804?v=4"
+        },
+        {
+          "login": "vChavezB",
+          "type": "User",
+          "contributions": 16,
+          "html_url": "https://github.com/vChavezB",
+          "avatar_url": "https://avatars.githubusercontent.com/u/47216966?v=4"
+        },
+        {
+          "login": "binfalse",
+          "type": "User",
+          "contributions": 13,
+          "html_url": "https://github.com/binfalse",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1564898?v=4"
+        },
+        {
+          "login": "renefritze",
+          "type": "User",
+          "contributions": 12,
+          "html_url": "https://github.com/renefritze",
+          "avatar_url": "https://avatars.githubusercontent.com/u/47802?v=4"
+        },
+        {
+          "login": "almudenaris",
+          "type": "User",
+          "contributions": 11,
+          "html_url": "https://github.com/almudenaris",
+          "avatar_url": "https://avatars.githubusercontent.com/u/3510896?v=4"
+        },
+        {
+          "login": "pmcb55",
+          "type": "User",
+          "contributions": 9,
+          "html_url": "https://github.com/pmcb55",
+          "avatar_url": "https://avatars.githubusercontent.com/u/961445?v=4"
+        },
+        {
+          "login": "seralf",
+          "type": "User",
+          "contributions": 7,
+          "html_url": "https://github.com/seralf",
+          "avatar_url": "https://avatars.githubusercontent.com/u/88188?v=4"
+        },
+        {
+          "login": "janvlug",
+          "type": "User",
+          "contributions": 6,
+          "html_url": "https://github.com/janvlug",
+          "avatar_url": "https://avatars.githubusercontent.com/u/5903208?v=4"
+        },
+        {
+          "login": "kartgk",
+          "type": "User",
+          "contributions": 5,
+          "html_url": "https://github.com/kartgk",
+          "avatar_url": "https://avatars.githubusercontent.com/u/12909601?v=4"
+        },
+        {
+          "login": "mariapoveda",
+          "type": "User",
+          "contributions": 5,
+          "html_url": "https://github.com/mariapoveda",
+          "avatar_url": "https://avatars.githubusercontent.com/u/5693576?v=4"
+        },
+        {
+          "login": "neeohw",
+          "type": "User",
+          "contributions": 5,
+          "html_url": "https://github.com/neeohw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/557168?v=4"
+        },
+        {
+          "login": "ccamel",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/ccamel",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9574336?v=4"
+        },
+        {
+          "login": "MikiDi",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/MikiDi",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9383603?v=4"
+        },
+        {
+          "login": "SirkoS",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/SirkoS",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19189391?v=4"
+        },
+        {
+          "login": "rpietzsch",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/rpietzsch",
+          "avatar_url": "https://avatars.githubusercontent.com/u/6573478?v=4"
+        },
+        {
+          "login": "ioggstream",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/ioggstream",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1140844?v=4"
+        },
+        {
+          "login": "paulmillar",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/paulmillar",
+          "avatar_url": "https://avatars.githubusercontent.com/u/533081?v=4"
+        },
+        {
+          "login": "ocorcho",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/ocorcho",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1067341?v=4"
+        },
+        {
+          "login": "marioscrock",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/marioscrock",
+          "avatar_url": "https://avatars.githubusercontent.com/u/5709852?v=4"
+        },
+        {
+          "login": "JLLeitschuh",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/JLLeitschuh",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1323708?v=4"
+        },
+        {
+          "login": "T-Hellmund",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/T-Hellmund",
+          "avatar_url": "https://avatars.githubusercontent.com/u/42065061?v=4"
+        },
+        {
+          "login": "Murloc6",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/Murloc6",
+          "avatar_url": "https://avatars.githubusercontent.com/u/881739?v=4"
+        },
+        {
+          "login": "BMI24",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/BMI24",
+          "avatar_url": "https://avatars.githubusercontent.com/u/10518596?v=4"
+        },
+        {
+          "login": "agbeltran",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/agbeltran",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1417033?v=4"
+        },
+        {
+          "login": "telecsur",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/telecsur",
+          "avatar_url": "https://avatars.githubusercontent.com/u/55853394?v=4"
+        },
+        {
+          "login": "HanKruiger",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/HanKruiger",
+          "avatar_url": "https://avatars.githubusercontent.com/u/2293252?v=4"
+        },
+        {
+          "login": "jodischneider",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/jodischneider",
+          "avatar_url": "https://avatars.githubusercontent.com/u/480102?v=4"
+        },
+        {
+          "login": "lukaskabc",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/lukaskabc",
+          "avatar_url": "https://avatars.githubusercontent.com/u/28897542?v=4"
+        },
+        {
+          "login": "maximelefrancois86",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/maximelefrancois86",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11416248?v=4"
+        },
+        {
+          "login": "ma-garcia",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/ma-garcia",
+          "avatar_url": "https://avatars.githubusercontent.com/u/4291806?v=4"
+        },
+        {
+          "login": "psiotwo",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/psiotwo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1140626?v=4"
+        },
+        {
+          "login": "Xiqinger",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/Xiqinger",
+          "avatar_url": "https://avatars.githubusercontent.com/u/163422483?v=4"
+        },
+        {
+          "login": "dporto-idearium",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/dporto-idearium",
+          "avatar_url": "https://avatars.githubusercontent.com/u/309727384?v=4"
+        },
+        {
+          "login": "engapa",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/engapa",
+          "avatar_url": "https://avatars.githubusercontent.com/u/2376675?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_lincedu_lincedu_github_io",
+      "url": "https://github.com/lincedu/lincedu.github.io",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "cbadenes",
+          "type": "User",
+          "contributions": 12,
+          "html_url": "https://github.com/cbadenes",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1592973?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_lincedu_modelos_ia",
+      "url": "https://github.com/lincedu/modelos-ia",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "cbadenes",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/cbadenes",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1592973?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_morph_kgc_morph_kgc",
+      "url": "https://github.com/morph-kgc/morph-kgc",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "arenas-guerrero-julian",
+          "type": "User",
+          "contributions": 1306,
+          "html_url": "https://github.com/arenas-guerrero-julian",
+          "avatar_url": "https://avatars.githubusercontent.com/u/18464038?v=4"
+        },
+        {
+          "login": "achiminator",
+          "type": "User",
+          "contributions": 32,
+          "html_url": "https://github.com/achiminator",
+          "avatar_url": "https://avatars.githubusercontent.com/u/12608619?v=4"
+        },
+        {
+          "login": "dachafra",
+          "type": "User",
+          "contributions": 18,
+          "html_url": "https://github.com/dachafra",
+          "avatar_url": "https://avatars.githubusercontent.com/u/12400271?v=4"
+        },
+        {
+          "login": "ahmad88me",
+          "type": "User",
+          "contributions": 15,
+          "html_url": "https://github.com/ahmad88me",
+          "avatar_url": "https://avatars.githubusercontent.com/u/6922709?v=4"
+        },
+        {
+          "login": "jatoledo",
+          "type": "User",
+          "contributions": 15,
+          "html_url": "https://github.com/jatoledo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/18296979?v=4"
+        },
+        {
+          "login": "TheRazorace",
+          "type": "User",
+          "contributions": 13,
+          "html_url": "https://github.com/TheRazorace",
+          "avatar_url": "https://avatars.githubusercontent.com/u/49875599?v=4"
+        },
+        {
+          "login": "LuciaCabanillasRodriguez",
+          "type": "User",
+          "contributions": 9,
+          "html_url": "https://github.com/LuciaCabanillasRodriguez",
+          "avatar_url": "https://avatars.githubusercontent.com/u/147805983?v=4"
+        },
+        {
+          "login": "sanmai-NL",
+          "type": "User",
+          "contributions": 8,
+          "html_url": "https://github.com/sanmai-NL",
+          "avatar_url": "https://avatars.githubusercontent.com/u/3374183?v=4"
+        },
+        {
+          "login": "StephaneBranly",
+          "type": "User",
+          "contributions": 7,
+          "html_url": "https://github.com/StephaneBranly",
+          "avatar_url": "https://avatars.githubusercontent.com/u/51955833?v=4"
+        },
+        {
+          "login": "JorgeRianho",
+          "type": "User",
+          "contributions": 5,
+          "html_url": "https://github.com/JorgeRianho",
+          "avatar_url": "https://avatars.githubusercontent.com/u/235647082?v=4"
+        },
+        {
+          "login": "ocorcho",
+          "type": "User",
+          "contributions": 5,
+          "html_url": "https://github.com/ocorcho",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1067341?v=4"
+        },
+        {
+          "login": "julianvz6",
+          "type": "User",
+          "contributions": 5,
+          "html_url": "https://github.com/julianvz6",
+          "avatar_url": "https://avatars.githubusercontent.com/u/88210875?v=4"
+        },
+        {
+          "login": "lapkinvladimir",
+          "type": "User",
+          "contributions": 5,
+          "html_url": "https://github.com/lapkinvladimir",
+          "avatar_url": "https://avatars.githubusercontent.com/u/128398343?v=4"
+        },
+        {
+          "login": "OzzyTao",
+          "type": "User",
+          "contributions": 4,
+          "html_url": "https://github.com/OzzyTao",
+          "avatar_url": "https://avatars.githubusercontent.com/u/5325577?v=4"
+        },
+        {
+          "login": "mielvds",
+          "type": "User",
+          "contributions": 4,
+          "html_url": "https://github.com/mielvds",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1032980?v=4"
+        },
+        {
+          "login": "isaacnoya",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/isaacnoya",
+          "avatar_url": "https://avatars.githubusercontent.com/u/20664313?v=4"
+        },
+        {
+          "login": "christophbrosch",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/christophbrosch",
+          "avatar_url": "https://avatars.githubusercontent.com/u/44674265?v=4"
+        },
+        {
+          "login": "Spothedog1",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/Spothedog1",
+          "avatar_url": "https://avatars.githubusercontent.com/u/7429961?v=4"
+        },
+        {
+          "login": "ershimen",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/ershimen",
+          "avatar_url": "https://avatars.githubusercontent.com/u/50144994?v=4"
+        },
+        {
+          "login": "pawelostr",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/pawelostr",
+          "avatar_url": "https://avatars.githubusercontent.com/u/26488603?v=4"
+        },
+        {
+          "login": "david-martinez-garcia",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/david-martinez-garcia",
+          "avatar_url": "https://avatars.githubusercontent.com/u/94689492?v=4"
+        },
+        {
+          "login": "DylanVanAssche",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/DylanVanAssche",
+          "avatar_url": "https://avatars.githubusercontent.com/u/4999159?v=4"
+        },
+        {
+          "login": "eltociear",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/eltociear",
+          "avatar_url": "https://avatars.githubusercontent.com/u/22633385?v=4"
+        },
+        {
+          "login": "janosmeszaros",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/janosmeszaros",
+          "avatar_url": "https://avatars.githubusercontent.com/u/2004953?v=4"
+        },
+        {
+          "login": "mabounassif",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/mabounassif",
+          "avatar_url": "https://avatars.githubusercontent.com/u/573530?v=4"
+        },
+        {
+          "login": "bollwyvl",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/bollwyvl",
+          "avatar_url": "https://avatars.githubusercontent.com/u/45380?v=4"
+        },
+        {
+          "login": "tobiaswjohn",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/tobiaswjohn",
+          "avatar_url": "https://avatars.githubusercontent.com/u/34936267?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_morph_kgc_morph_kgc_docs",
+      "url": "https://github.com/morph-kgc/morph-kgc-docs",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "arenas-guerrero-julian",
+          "type": "User",
+          "contributions": 70,
+          "html_url": "https://github.com/arenas-guerrero-julian",
+          "avatar_url": "https://avatars.githubusercontent.com/u/18464038?v=4"
+        },
+        {
+          "login": "redmer",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/redmer",
+          "avatar_url": "https://avatars.githubusercontent.com/u/12477216?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_benchmarkingml4kgemodelcards",
+      "url": "https://github.com/oeg-upm/BenchmarkingML4KGEmodelcards",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "eamadord",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/eamadord",
+          "avatar_url": "https://avatars.githubusercontent.com/u/22665497?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_bo2dm",
+      "url": "https://github.com/oeg-upm/BO2DM",
+      "pitfalls": [],
+      "warnings": [
+        {
+          "id": "W004",
+          "description": "Checks programming language declarations in codemeta.json to see if they lack specific version numbers.",
+          "evidence": "W004 detected: codemeta.json Programming languages without versions: Python",
+          "suggestion": "Include version numbers for each programming language used. Defining these helps ensure reproducibility and compatibility across systems."
+        }
+      ],
+      "pitfalls_count": 0,
+      "warnings_count": 1,
+      "contributors": [
+        {
+          "login": "Serge3006",
+          "type": "User",
+          "contributions": 30,
+          "html_url": "https://github.com/Serge3006",
+          "avatar_url": "https://avatars.githubusercontent.com/u/30761241?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_cq4oe_benchmark",
+      "url": "https://github.com/oeg-upm/cq4oe-benchmark",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "OEG-Clark",
+          "type": "User",
+          "contributions": 129,
+          "html_url": "https://github.com/OEG-Clark",
+          "avatar_url": "https://avatars.githubusercontent.com/u/107419732?v=4"
+        },
+        {
+          "login": "jiaaaayiiiiiii",
+          "type": "User",
+          "contributions": 91,
+          "html_url": "https://github.com/jiaaaayiiiiiii",
+          "avatar_url": "https://avatars.githubusercontent.com/u/97403415?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 45,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        },
+        {
+          "login": "ClarkWang0519",
+          "type": "User",
+          "contributions": 21,
+          "html_url": "https://github.com/ClarkWang0519",
+          "avatar_url": "https://avatars.githubusercontent.com/u/48079420?v=4"
+        },
+        {
+          "login": "mariapoveda",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/mariapoveda",
+          "avatar_url": "https://avatars.githubusercontent.com/u/5693576?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_dia_conversational_agent",
+      "url": "https://github.com/oeg-upm/dia-conversational-agent",
+      "pitfalls": [],
+      "warnings": [
+        {
+          "id": "W001",
+          "description": "Analyzes software requirements in metadata to see if they lack explicit version constraints.",
+          "evidence": "W001 detected: requirements.txt contains software requirements without versions: fastapi, uvicorn[standard], chromadb, boto3, python-dotenv, pydantic, requests, beautifulsoup4, docling",
+          "suggestion": "Add version numbers to your dependencies. This provides stability for users and allows reproducibility across different environments."
+        }
+      ],
+      "pitfalls_count": 0,
+      "warnings_count": 1,
+      "contributors": [
+        {
+          "login": "Juanma21104",
+          "type": "User",
+          "contributions": 48,
+          "html_url": "https://github.com/Juanma21104",
+          "avatar_url": "https://avatars.githubusercontent.com/u/115273140?v=4"
+        },
+        {
+          "login": "AlvaroCasasus",
+          "type": "User",
+          "contributions": 32,
+          "html_url": "https://github.com/AlvaroCasasus",
+          "avatar_url": "https://avatars.githubusercontent.com/u/98888951?v=4"
+        },
+        {
+          "login": "ocorcho",
+          "type": "User",
+          "contributions": 19,
+          "html_url": "https://github.com/ocorcho",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1067341?v=4"
+        },
+        {
+          "login": "bacachoddy",
+          "type": "User",
+          "contributions": 19,
+          "html_url": "https://github.com/bacachoddy",
+          "avatar_url": "https://avatars.githubusercontent.com/u/231927355?v=4"
+        },
+        {
+          "login": "paguilomanas",
+          "type": "User",
+          "contributions": 7,
+          "html_url": "https://github.com/paguilomanas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/118525517?v=4"
+        },
+        {
+          "login": "Juanmaa21",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/Juanmaa21",
+          "avatar_url": "https://avatars.githubusercontent.com/u/125654554?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_fair_ontologies",
+      "url": "https://github.com/oeg-upm/fair_ontologies",
+      "pitfalls": [],
+      "warnings": [
+        {
+          "id": "W001",
+          "description": "Analyzes software requirements in metadata to see if they lack explicit version constraints.",
+          "evidence": "W001 detected: pom.xml contains software requirements without versions: spring-boot-starter-web, spring-boot-starter-test, rdflib, isodate, Markdown, pyparsing, pystache, requests",
+          "suggestion": "Add version numbers to your dependencies. This provides stability for users and allows reproducibility across different environments."
+        }
+      ],
+      "pitfalls_count": 0,
+      "warnings_count": 1,
+      "contributors": [
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 221,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        },
+        {
+          "login": "juanjemdIos",
+          "type": "User",
+          "contributions": 106,
+          "html_url": "https://github.com/juanjemdIos",
+          "avatar_url": "https://avatars.githubusercontent.com/u/116972173?v=4"
+        },
+        {
+          "login": "github-actions[bot]",
+          "type": "Bot",
+          "contributions": 42,
+          "html_url": "https://github.com/apps/github-actions",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+        },
+        {
+          "login": "mariapoveda",
+          "type": "User",
+          "contributions": 33,
+          "html_url": "https://github.com/mariapoveda",
+          "avatar_url": "https://avatars.githubusercontent.com/u/5693576?v=4"
+        },
+        {
+          "login": "kalili99",
+          "type": "User",
+          "contributions": 11,
+          "html_url": "https://github.com/kalili99",
+          "avatar_url": "https://avatars.githubusercontent.com/u/33469177?v=4"
+        },
+        {
+          "login": "andriumon",
+          "type": "User",
+          "contributions": 4,
+          "html_url": "https://github.com/andriumon",
+          "avatar_url": "https://avatars.githubusercontent.com/u/70607325?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_fair_research_object",
+      "url": "https://github.com/oeg-upm/FAIR-Research-Object",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "esgg",
+          "type": "User",
+          "contributions": 60,
+          "html_url": "https://github.com/esgg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/4169482?v=4"
+        },
+        {
+          "login": "BenitezDev",
+          "type": "User",
+          "contributions": 40,
+          "html_url": "https://github.com/BenitezDev",
+          "avatar_url": "https://avatars.githubusercontent.com/u/45520367?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 12,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        },
+        {
+          "login": "ocorcho",
+          "type": "User",
+          "contributions": 6,
+          "html_url": "https://github.com/ocorcho",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1067341?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_gap_kge",
+      "url": "https://github.com/oeg-upm/GAP-KGE",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "erick4556",
+          "type": "User",
+          "contributions": 22,
+          "html_url": "https://github.com/erick4556",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11901315?v=4"
+        },
+        {
+          "login": "Oppenheimer22",
+          "type": "User",
+          "contributions": 17,
+          "html_url": "https://github.com/Oppenheimer22",
+          "avatar_url": "https://avatars.githubusercontent.com/u/113797150?v=4"
+        },
+        {
+          "login": "eamadord",
+          "type": "User",
+          "contributions": 6,
+          "html_url": "https://github.com/eamadord",
+          "avatar_url": "https://avatars.githubusercontent.com/u/22665497?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_grower",
+      "url": "https://github.com/oeg-upm/GrOwEr",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "jarueda-oeg",
+          "type": "User",
+          "contributions": 19,
+          "html_url": "https://github.com/jarueda-oeg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/244983063?v=4"
+        },
+        {
+          "login": "GenEars",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/GenEars",
+          "avatar_url": "https://avatars.githubusercontent.com/u/7789198?v=4"
+        },
+        {
+          "login": "Sergio-Carulli",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/Sergio-Carulli",
+          "avatar_url": "https://avatars.githubusercontent.com/u/60430333?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_inelod_catalogue",
+      "url": "https://github.com/oeg-upm/INELOD-Catalogue",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "DiegoCondeHerreros",
+          "type": "User",
+          "contributions": 60,
+          "html_url": "https://github.com/DiegoCondeHerreros",
+          "avatar_url": "https://avatars.githubusercontent.com/u/63185386?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_inesdata_website",
+      "url": "https://github.com/oeg-upm/inesdata-website",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "crisana1",
+          "type": "User",
+          "contributions": 38,
+          "html_url": "https://github.com/crisana1",
+          "avatar_url": "https://avatars.githubusercontent.com/u/203631704?v=4"
+        },
+        {
+          "login": "carlos-ruiz-moreno",
+          "type": "User",
+          "contributions": 7,
+          "html_url": "https://github.com/carlos-ruiz-moreno",
+          "avatar_url": "https://avatars.githubusercontent.com/u/4263214?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        },
+        {
+          "login": "ralcazar-oeg",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/ralcazar-oeg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/23639873?v=4"
+        },
+        {
+          "login": "JPardo08",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/JPardo08",
+          "avatar_url": "https://avatars.githubusercontent.com/u/102529062?v=4"
+        },
+        {
+          "login": "emontiel",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/emontiel",
+          "avatar_url": "https://avatars.githubusercontent.com/u/5487465?v=4"
+        },
+        {
+          "login": "SPabloCalleja",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/SPabloCalleja",
+          "avatar_url": "https://avatars.githubusercontent.com/u/2526093?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_ippcp_ontology",
+      "url": "https://github.com/oeg-upm/IPPCP-Ontology",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "LuciaSG99",
+          "type": "User",
+          "contributions": 17,
+          "html_url": "https://github.com/LuciaSG99",
+          "avatar_url": "https://avatars.githubusercontent.com/u/90138875?v=4"
+        },
+        {
+          "login": "OnToologyUser",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/OnToologyUser",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11507979?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_linkedopendataine",
+      "url": "https://github.com/oeg-upm/LinkedOpenDataINE",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "DiegoCondeHerreros",
+          "type": "User",
+          "contributions": 124,
+          "html_url": "https://github.com/DiegoCondeHerreros",
+          "avatar_url": "https://avatars.githubusercontent.com/u/63185386?v=4"
+        },
+        {
+          "login": "isaacnoya",
+          "type": "User",
+          "contributions": 18,
+          "html_url": "https://github.com/isaacnoya",
+          "avatar_url": "https://avatars.githubusercontent.com/u/20664313?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_maseo",
+      "url": "https://github.com/oeg-upm/maseo",
+      "pitfalls": [
+        {
+          "id": "P001",
+          "description": "Compares the version found in the metadata file with the latest repository release tag.",
+          "evidence": "P001 detected: pyproject.toml version '0.1.0' does not match release version '1.2'",
+          "suggestion": "Ensure the version in your metadata matches the latest official release (1.2). Keeping these synchronized avoids confusion for users and improves reproducibility."
+        }
+      ],
+      "warnings": [
+        {
+          "id": "W001",
+          "description": "Analyzes software requirements in metadata to see if they lack explicit version constraints.",
+          "evidence": "W001 detected: pyproject.toml contains software requirements without versions: mkdocs-material",
+          "suggestion": "Add version numbers to your dependencies. This provides stability for users and allows reproducibility across different environments."
+        }
+      ],
+      "pitfalls_count": 1,
+      "warnings_count": 1,
+      "contributors": [
+        {
+          "login": "jiaaaayiiiiiii",
+          "type": "User",
+          "contributions": 62,
+          "html_url": "https://github.com/jiaaaayiiiiiii",
+          "avatar_url": "https://avatars.githubusercontent.com/u/97403415?v=4"
+        },
+        {
+          "login": "OEG-Clark",
+          "type": "User",
+          "contributions": 33,
+          "html_url": "https://github.com/OEG-Clark",
+          "avatar_url": "https://avatars.githubusercontent.com/u/107419732?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 14,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_mustdrifter",
+      "url": "https://github.com/oeg-upm/mustdrifter",
+      "pitfalls": [
+        {
+          "id": "P001",
+          "description": "Compares the version found in the metadata file with the latest repository release tag.",
+          "evidence": "P001 detected: pyproject.toml version '0.1.0' does not match release version '1.0.0'",
+          "suggestion": "Ensure the version in your metadata matches the latest official release (1.0.0). Keeping these synchronized avoids confusion for users and improves reproducibility."
+        }
+      ],
+      "warnings": [
+        {
+          "id": "W001",
+          "description": "Analyzes software requirements in metadata to see if they lack explicit version constraints.",
+          "evidence": "W001 detected: pyproject.toml contains software requirements without versions: numpy, pandas, scikit-learn, torch, transformers, stanza, matplotlib, fasttext-numpy2-wheel, bertopic, setuptools, nbformat, frouros, emoji",
+          "suggestion": "Add version numbers to your dependencies. This provides stability for users and allows reproducibility across different environments."
+        }
+      ],
+      "pitfalls_count": 1,
+      "warnings_count": 1,
+      "contributors": [
+        {
+          "login": "iguillenp",
+          "type": "User",
+          "contributions": 187,
+          "html_url": "https://github.com/iguillenp",
+          "avatar_url": "https://avatars.githubusercontent.com/u/33113760?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_neurograph",
+      "url": "https://github.com/oeg-upm/NEUROGRAPH",
+      "pitfalls": [],
+      "warnings": [
+        {
+          "id": "W001",
+          "description": "Analyzes software requirements in metadata to see if they lack explicit version constraints.",
+          "evidence": "W001 detected: requirements.txt contains software requirements without versions: openai, rdflib",
+          "suggestion": "Add version numbers to your dependencies. This provides stability for users and allows reproducibility across different environments."
+        }
+      ],
+      "pitfalls_count": 0,
+      "warnings_count": 1,
+      "contributors": [
+        {
+          "login": "W-Free",
+          "type": "User",
+          "contributions": 19,
+          "html_url": "https://github.com/W-Free",
+          "avatar_url": "https://avatars.githubusercontent.com/u/115725053?v=4"
+        },
+        {
+          "login": "alberto-upm",
+          "type": "User",
+          "contributions": 11,
+          "html_url": "https://github.com/alberto-upm",
+          "avatar_url": "https://avatars.githubusercontent.com/u/123464939?v=4"
+        },
+        {
+          "login": "eamadord",
+          "type": "User",
+          "contributions": 5,
+          "html_url": "https://github.com/eamadord",
+          "avatar_url": "https://avatars.githubusercontent.com/u/22665497?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_oeg_service_status",
+      "url": "https://github.com/oeg-upm/oeg-service-status",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "github-actions[bot]",
+          "type": "Bot",
+          "contributions": 102,
+          "html_url": "https://github.com/apps/github-actions",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+        },
+        {
+          "login": "esgg",
+          "type": "User",
+          "contributions": 97,
+          "html_url": "https://github.com/esgg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/4169482?v=4"
+        },
+        {
+          "login": "juanjemdIos",
+          "type": "User",
+          "contributions": 27,
+          "html_url": "https://github.com/juanjemdIos",
+          "avatar_url": "https://avatars.githubusercontent.com/u/116972173?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_ontologia_miurba",
+      "url": "https://github.com/oeg-upm/ontologia-miUrba",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "LuciaSG99",
+          "type": "User",
+          "contributions": 13,
+          "html_url": "https://github.com/LuciaSG99",
+          "avatar_url": "https://avatars.githubusercontent.com/u/90138875?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_ontology_governance_framework",
+      "url": "https://github.com/oeg-upm/Ontology-governance-framework",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "LuciaSG99",
+          "type": "User",
+          "contributions": 84,
+          "html_url": "https://github.com/LuciaSG99",
+          "avatar_url": "https://avatars.githubusercontent.com/u/90138875?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_owlchangeontology",
+      "url": "https://github.com/oeg-upm/OWLChangeOntology",
+      "pitfalls": [],
+      "warnings": [
+        {
+          "id": "W001",
+          "description": "Analyzes software requirements in metadata to see if they lack explicit version constraints.",
+          "evidence": "W001 detected: requirements.txt contains software requirements without versions: rdflib",
+          "suggestion": "Add version numbers to your dependencies. This provides stability for users and allows reproducibility across different environments."
+        }
+      ],
+      "pitfalls_count": 0,
+      "warnings_count": 1,
+      "contributors": [
+        {
+          "login": "DiegoCondeHerreros",
+          "type": "User",
+          "contributions": 74,
+          "html_url": "https://github.com/DiegoCondeHerreros",
+          "avatar_url": "https://avatars.githubusercontent.com/u/63185386?v=4"
+        },
+        {
+          "login": "OnToologyUser",
+          "type": "User",
+          "contributions": 14,
+          "html_url": "https://github.com/OnToologyUser",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11507979?v=4"
+        },
+        {
+          "login": "dachafra",
+          "type": "User",
+          "contributions": 4,
+          "html_url": "https://github.com/dachafra",
+          "avatar_url": "https://avatars.githubusercontent.com/u/12400271?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_p2mc",
+      "url": "https://github.com/oeg-upm/p2mc",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "SergioZSZ",
+          "type": "User",
+          "contributions": 29,
+          "html_url": "https://github.com/SergioZSZ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/95578449?v=4"
+        },
+        {
+          "login": "eamadord",
+          "type": "User",
+          "contributions": 24,
+          "html_url": "https://github.com/eamadord",
+          "avatar_url": "https://avatars.githubusercontent.com/u/22665497?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 4,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        },
+        {
+          "login": "Oppenheimer22",
+          "type": "User",
+          "contributions": 4,
+          "html_url": "https://github.com/Oppenheimer22",
+          "avatar_url": "https://avatars.githubusercontent.com/u/113797150?v=4"
+        },
+        {
+          "login": "erick4556",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/erick4556",
+          "avatar_url": "https://avatars.githubusercontent.com/u/11901315?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_rsecon26_codemeta",
+      "url": "https://github.com/oeg-upm/rsecon26-codemeta",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "esgg",
+          "type": "User",
+          "contributions": 23,
+          "html_url": "https://github.com/esgg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/4169482?v=4"
+        },
+        {
+          "login": "Anas-Elhounsri",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/Anas-Elhounsri",
+          "avatar_url": "https://avatars.githubusercontent.com/u/71127394?v=4"
+        },
+        {
+          "login": "github-actions[bot]",
+          "type": "Bot",
+          "contributions": 2,
+          "html_url": "https://github.com/apps/github-actions",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_rsfc",
+      "url": "https://github.com/oeg-upm/rsfc",
+      "pitfalls": [],
+      "warnings": [
+        {
+          "id": "W001",
+          "description": "Analyzes software requirements in metadata to see if they lack explicit version constraints.",
+          "evidence": "W001 detected: pyproject.toml contains software requirements without versions: poetry-core",
+          "suggestion": "Add version numbers to your dependencies. This provides stability for users and allows reproducibility across different environments."
+        },
+        {
+          "id": "W004",
+          "description": "Checks programming language declarations in codemeta.json to see if they lack specific version numbers.",
+          "evidence": "W004 detected: codemeta.json Programming languages without versions: Python",
+          "suggestion": "Include version numbers for each programming language used. Defining these helps ensure reproducibility and compatibility across systems."
+        }
+      ],
+      "pitfalls_count": 0,
+      "warnings_count": 2,
+      "contributors": [
+        {
+          "login": "andriumon",
+          "type": "User",
+          "contributions": 168,
+          "html_url": "https://github.com/andriumon",
+          "avatar_url": "https://avatars.githubusercontent.com/u/70607325?v=4"
+        },
+        {
+          "login": "juanjemdIos",
+          "type": "User",
+          "contributions": 147,
+          "html_url": "https://github.com/juanjemdIos",
+          "avatar_url": "https://avatars.githubusercontent.com/u/116972173?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 4,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        },
+        {
+          "login": "francoto",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/francoto",
+          "avatar_url": "https://avatars.githubusercontent.com/u/23552862?v=4"
+        },
+        {
+          "login": "louvetv",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/louvetv",
+          "avatar_url": "https://avatars.githubusercontent.com/u/31949406?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_rsfc_action",
+      "url": "https://github.com/oeg-upm/rsfc-action",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "andriumon",
+          "type": "User",
+          "contributions": 13,
+          "html_url": "https://github.com/andriumon",
+          "avatar_url": "https://avatars.githubusercontent.com/u/70607325?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_rsfc_service",
+      "url": "https://github.com/oeg-upm/rsfc-service",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "andriumon",
+          "type": "User",
+          "contributions": 41,
+          "html_url": "https://github.com/andriumon",
+          "avatar_url": "https://avatars.githubusercontent.com/u/70607325?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_saint_experiments_wp2_wp4",
+      "url": "https://github.com/oeg-upm/saint-experiments-wp2-wp4",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "jatoledo",
+          "type": "User",
+          "contributions": 9,
+          "html_url": "https://github.com/jatoledo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/18296979?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_soca",
+      "url": "https://github.com/oeg-upm/soca",
+      "pitfalls": [],
+      "warnings": [
+        {
+          "id": "W001",
+          "description": "Analyzes software requirements in metadata to see if they lack explicit version constraints.",
+          "evidence": "W001 detected: codemeta.json contains software requirements without versions: wheel",
+          "suggestion": "Add version numbers to your dependencies. This provides stability for users and allows reproducibility across different environments."
+        },
+        {
+          "id": "W004",
+          "description": "Checks programming language declarations in codemeta.json to see if they lack specific version numbers.",
+          "evidence": "W004 detected: codemeta.json Programming languages without versions: Python",
+          "suggestion": "Include version numbers for each programming language used. Defining these helps ensure reproducibility and compatibility across systems."
+        }
+      ],
+      "pitfalls_count": 0,
+      "warnings_count": 2,
+      "contributors": [
+        {
+          "login": "dakixr",
+          "type": "User",
+          "contributions": 263,
+          "html_url": "https://github.com/dakixr",
+          "avatar_url": "https://avatars.githubusercontent.com/u/26521823?v=4"
+        },
+        {
+          "login": "Str3am786",
+          "type": "User",
+          "contributions": 111,
+          "html_url": "https://github.com/Str3am786",
+          "avatar_url": "https://avatars.githubusercontent.com/u/74185618?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 44,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        },
+        {
+          "login": "Arr0y0",
+          "type": "User",
+          "contributions": 26,
+          "html_url": "https://github.com/Arr0y0",
+          "avatar_url": "https://avatars.githubusercontent.com/u/90572750?v=4"
+        },
+        {
+          "login": "esgg",
+          "type": "User",
+          "contributions": 10,
+          "html_url": "https://github.com/esgg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/4169482?v=4"
+        },
+        {
+          "login": "SergioZSZ",
+          "type": "User",
+          "contributions": 4,
+          "html_url": "https://github.com/SergioZSZ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/95578449?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_soel_site",
+      "url": "https://github.com/oeg-upm/soel-site",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 16,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        },
+        {
+          "login": "mariapoveda",
+          "type": "User",
+          "contributions": 8,
+          "html_url": "https://github.com/mariapoveda",
+          "avatar_url": "https://avatars.githubusercontent.com/u/5693576?v=4"
+        },
+        {
+          "login": "andriumon",
+          "type": "User",
+          "contributions": 5,
+          "html_url": "https://github.com/andriumon",
+          "avatar_url": "https://avatars.githubusercontent.com/u/70607325?v=4"
+        },
+        {
+          "login": "jiaaaayiiiiiii",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/jiaaaayiiiiiii",
+          "avatar_url": "https://avatars.githubusercontent.com/u/97403415?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_solarchem_corpus",
+      "url": "https://github.com/oeg-upm/solarchem-corpus",
+      "pitfalls": [],
+      "warnings": [
+        {
+          "id": "W004",
+          "description": "Checks programming language declarations in codemeta.json to see if they lack specific version numbers.",
+          "evidence": "W004 detected: codemeta.json Programming languages without versions: Python",
+          "suggestion": "Include version numbers for each programming language used. Defining these helps ensure reproducibility and compatibility across systems."
+        }
+      ],
+      "pitfalls_count": 0,
+      "warnings_count": 1,
+      "contributors": [
+        {
+          "login": "OEG-Clark",
+          "type": "User",
+          "contributions": 69,
+          "html_url": "https://github.com/OEG-Clark",
+          "avatar_url": "https://avatars.githubusercontent.com/u/107419732?v=4"
+        },
+        {
+          "login": "dgarijo",
+          "type": "User",
+          "contributions": 33,
+          "html_url": "https://github.com/dgarijo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1520666?v=4"
+        },
+        {
+          "login": "dependabot[bot]",
+          "type": "Bot",
+          "contributions": 7,
+          "html_url": "https://github.com/apps/dependabot",
+          "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_teresia_annotators",
+      "url": "https://github.com/oeg-upm/teresia-annotators",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "JPardo08",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/JPardo08",
+          "avatar_url": "https://avatars.githubusercontent.com/u/102529062?v=4"
+        },
+        {
+          "login": "SPabloCalleja",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/SPabloCalleja",
+          "avatar_url": "https://avatars.githubusercontent.com/u/2526093?v=4"
+        },
+        {
+          "login": "paula-diez",
+          "type": "User",
+          "contributions": 1,
+          "html_url": "https://github.com/paula-diez",
+          "avatar_url": "https://avatars.githubusercontent.com/u/137040966?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_teresia_brat_server",
+      "url": "https://github.com/oeg-upm/teresia-brat-server",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "JPardo08",
+          "type": "User",
+          "contributions": 66,
+          "html_url": "https://github.com/JPardo08",
+          "avatar_url": "https://avatars.githubusercontent.com/u/102529062?v=4"
+        },
+        {
+          "login": "paula-diez",
+          "type": "User",
+          "contributions": 10,
+          "html_url": "https://github.com/paula-diez",
+          "avatar_url": "https://avatars.githubusercontent.com/u/137040966?v=4"
+        },
+        {
+          "login": "pmchozas",
+          "type": "User",
+          "contributions": 4,
+          "html_url": "https://github.com/pmchozas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/37108648?v=4"
+        },
+        {
+          "login": "SPabloCalleja",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/SPabloCalleja",
+          "avatar_url": "https://avatars.githubusercontent.com/u/2526093?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_themis",
+      "url": "https://github.com/oeg-upm/Themis",
+      "pitfalls": [
+        {
+          "id": "P001",
+          "description": "Compares the version found in the metadata file with the latest repository release tag.",
+          "evidence": "P001 detected: pom.xml version '1.0-SNAPSHOT' does not match release version '2.0'",
+          "suggestion": "Ensure the version in your metadata matches the latest official release (2.0). Keeping these synchronized avoids confusion for users and improves reproducibility."
+        }
+      ],
+      "warnings": [],
+      "pitfalls_count": 1,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "albaizq",
+          "type": "User",
+          "contributions": 38,
+          "html_url": "https://github.com/albaizq",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9139996?v=4"
+        },
+        {
+          "login": "rgcmme",
+          "type": "User",
+          "contributions": 29,
+          "html_url": "https://github.com/rgcmme",
+          "avatar_url": "https://avatars.githubusercontent.com/u/6009100?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_tintolib",
+      "url": "https://github.com/oeg-upm/TINTOlib",
+      "pitfalls": [
+        {
+          "id": "P001",
+          "description": "Compares the version found in the metadata file with the latest repository release tag.",
+          "evidence": "P001 detected: pyproject.toml version '1.3.1', pyproject.toml version '1.3.1', codemeta.json version '1.1.0' and codemeta.json version '1.1.0' does not match release version '1.3.0'",
+          "suggestion": "Ensure the version in your metadata matches the latest official release (1.3.0). Keeping these synchronized avoids confusion for users and improves reproducibility."
+        },
+        {
+          "id": "P017",
+          "description": "Compares the version field in codemeta.json against the package manager version.",
+          "evidence": "P017 detected: codemeta.json, pyproject.toml and CITATION.cff version '1.1.0' does not match pyproject.toml version '1.3.1', pyproject.toml version '1.3.1', metadata files version '1.3.1'",
+          "suggestion": "You need to synchronize all version references across metadata and build configuration files. (Repository matches github API: https://github.com/oeg-upm/TINTOlib)"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "W001",
+          "description": "Analyzes software requirements in metadata to see if they lack explicit version constraints.",
+          "evidence": "W001 detected: codemeta.json contains software requirements without versions: hatchling, -e .",
+          "suggestion": "Add version numbers to your dependencies. This provides stability for users and allows reproducibility across different environments."
+        },
+        {
+          "id": "W002",
+          "description": "Compares the dateModified field against the date of the latest release of the actual repository.",
+          "evidence": "W002 detected: metadata files dateModified '2026-05-14T00:00:00' is outdated compared to latest release date '2026-08-04T09:11:29'",
+          "suggestion": "The data in the metadata file should be updated to be aligned with the date of the latest release (2026-08-04T09:11:29)."
+        },
+        {
+          "id": "W004",
+          "description": "Checks programming language declarations in codemeta.json to see if they lack specific version numbers.",
+          "evidence": "W004 detected: codemeta.json Programming languages without versions: Python",
+          "suggestion": "Include version numbers for each programming language used. Defining these helps ensure reproducibility and compatibility across systems."
+        }
+      ],
+      "pitfalls_count": 2,
+      "warnings_count": 3,
+      "contributors": [
+        {
+          "login": "manwestc",
+          "type": "User",
+          "contributions": 89,
+          "html_url": "https://github.com/manwestc",
+          "avatar_url": "https://avatars.githubusercontent.com/u/102165947?v=4"
+        },
+        {
+          "login": "DCY1117",
+          "type": "User",
+          "contributions": 87,
+          "html_url": "https://github.com/DCY1117",
+          "avatar_url": "https://avatars.githubusercontent.com/u/109959299?v=4"
+        },
+        {
+          "login": "DavidGonzalezFernandez",
+          "type": "User",
+          "contributions": 52,
+          "html_url": "https://github.com/DavidGonzalezFernandez",
+          "avatar_url": "https://avatars.githubusercontent.com/u/99149011?v=4"
+        },
+        {
+          "login": "BorjaRei",
+          "type": "User",
+          "contributions": 34,
+          "html_url": "https://github.com/BorjaRei",
+          "avatar_url": "https://avatars.githubusercontent.com/u/49234041?v=4"
+        },
+        {
+          "login": "javilecrin",
+          "type": "User",
+          "contributions": 18,
+          "html_url": "https://github.com/javilecrin",
+          "avatar_url": "https://avatars.githubusercontent.com/u/14923314?v=4"
+        },
+        {
+          "login": "salvadormartinezmoreno-hub",
+          "type": "User",
+          "contributions": 8,
+          "html_url": "https://github.com/salvadormartinezmoreno-hub",
+          "avatar_url": "https://avatars.githubusercontent.com/u/270402084?v=4"
+        },
+        {
+          "login": "EdmundoMori",
+          "type": "User",
+          "contributions": 2,
+          "html_url": "https://github.com/EdmundoMori",
+          "avatar_url": "https://avatars.githubusercontent.com/u/148738862?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_tintolib_documentation",
+      "url": "https://github.com/oeg-upm/TINTOlib-Documentation",
+      "pitfalls": [],
+      "warnings": [
+        {
+          "id": "W001",
+          "description": "Analyzes software requirements in metadata to see if they lack explicit version constraints.",
+          "evidence": "W001 detected: requirements.txt contains software requirements without versions: sphinx-rtd-theme",
+          "suggestion": "Add version numbers to your dependencies. This provides stability for users and allows reproducibility across different environments."
+        }
+      ],
+      "pitfalls_count": 0,
+      "warnings_count": 1,
+      "contributors": [
+        {
+          "login": "DCY1117",
+          "type": "User",
+          "contributions": 140,
+          "html_url": "https://github.com/DCY1117",
+          "avatar_url": "https://avatars.githubusercontent.com/u/109959299?v=4"
+        },
+        {
+          "login": "BorjaRei",
+          "type": "User",
+          "contributions": 111,
+          "html_url": "https://github.com/BorjaRei",
+          "avatar_url": "https://avatars.githubusercontent.com/u/49234041?v=4"
+        },
+        {
+          "login": "manwestc",
+          "type": "User",
+          "contributions": 47,
+          "html_url": "https://github.com/manwestc",
+          "avatar_url": "https://avatars.githubusercontent.com/u/102165947?v=4"
+        },
+        {
+          "login": "salvadormartinezmoreno-hub",
+          "type": "User",
+          "contributions": 3,
+          "html_url": "https://github.com/salvadormartinezmoreno-hub",
+          "avatar_url": "https://avatars.githubusercontent.com/u/270402084?v=4"
+        }
+      ]
+    },
+    {
+      "name": "github_com_oeg_upm_web_oeg",
+      "url": "https://github.com/oeg-upm/web-oeg",
+      "pitfalls": [],
+      "warnings": [],
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "contributors": [
+        {
+          "login": "JARG-FI",
+          "type": "User",
+          "contributions": 643,
+          "html_url": "https://github.com/JARG-FI",
+          "avatar_url": "https://avatars.githubusercontent.com/u/171345600?v=4"
+        },
+        {
+          "login": "LauCamacho",
+          "type": "User",
+          "contributions": 269,
+          "html_url": "https://github.com/LauCamacho",
+          "avatar_url": "https://avatars.githubusercontent.com/u/79903374?v=4"
+        },
+        {
+          "login": "dacilm",
+          "type": "User",
+          "contributions": 114,
+          "html_url": "https://github.com/dacilm",
+          "avatar_url": "https://avatars.githubusercontent.com/u/265343259?v=4"
+        },
+        {
+          "login": "ralcazar-oeg",
+          "type": "User",
+          "contributions": 8,
+          "html_url": "https://github.com/ralcazar-oeg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/23639873?v=4"
+        }
+      ]
+    }
+  ]
+}

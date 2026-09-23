@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active Repositories in OEG - Quality Report</title>
+<style>
+  :root {
+    --ink: #1a202c;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --conn: #cbd5e1;
+    --green: #22c55e;
+    --card-border: #e2e8f0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #ffffff;
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+      Arial, sans-serif;
+    line-height: 1.5;
+    padding: 40px 24px 64px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  h1 {
+    font-size: 26px;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    margin: 0 0 10px;
+    font-size: 14px;
+  }
+  .intro {
+    max-width: 860px;
+    color: #475569;
+    font-size: 14px;
+    margin: 0 0 32px;
+  }
+  h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+
+  /* ---------- Horizontal flash-card tree ---------- */
+  .cards-section { margin-bottom: 44px; }
+  .htree-scroll { overflow-x: auto; }
+  .htree {
+    display: grid;
+    grid-template-columns: auto 44px auto 44px auto;
+    grid-template-rows: 130px 28px 130px;
+    justify-content: center;
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  .card {
+    box-sizing: border-box;
+    width: 250px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    border-radius: 0;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    padding: 14px 18px;
+    text-align: center;
+  }
+  .card .label {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .card .value {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .card .meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-right: 6px;
+    vertical-align: 1px;
+  }
+
+  .card.root { grid-column: 1; grid-row: 1 / span 3; align-self: center; justify-self: center; }
+  .card.top { grid-column: 3; grid-row: 1; }
+  .card.bottom { grid-column: 3; grid-row: 3; }
+  .card.unique { grid-column: 5; grid-row: 1; }
+
+  .conn { position: relative; }
+  .conn-root { grid-column: 2; grid-row: 1 / span 3; }
+  .conn-top { grid-column: 4; grid-row: 1; }
+  .conn .h {
+    position: absolute;
+    height: 0;
+    border-top: 1.5px solid var(--conn);
+  }
+  .conn .v {
+    position: absolute;
+    width: 0;
+    border-left: 1.5px solid var(--conn);
+  }
+  .conn-root .v { left: 50%; top: 0; bottom: 0; }
+  .conn-root .h-mid { left: 0; right: 50%; top: 50%; }
+  .conn-root .h-top { left: 50%; right: 0; top: 65px; }
+  .conn-root .h-bottom { left: 50%; right: 0; top: 223px; }
+  .conn-top .h { left: 0; right: 0; top: 65px; }
+
+  /* ---------- Table ---------- */
+  .table-card {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  thead th {
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    background: #f8fafc;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+  }
+  tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #fafafa; }
+  tbody tr.has-findings { background: #dcfce7; }
+  tbody tr.has-findings:hover { background: #bbf7d0; }
+  .repo a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    word-break: break-all;
+  }
+  .repo a:hover { text-decoration: underline; }
+  th:nth-child(1), td:nth-child(1) { width: 26%; }
+  th:nth-child(2), td:nth-child(2) { width: 20%; }
+  th:nth-child(3), td:nth-child(3) { width: 20%; }
+  th:nth-child(4), td:nth-child(4) { width: 34%; }
+
+  .na { color: #94a3b8; font-style: italic; }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge.pitfall { background: #fee2e2; color: #b91c1c; }
+  .badge.warning { background: #fef3c7; color: #b45309; }
+  .contribs { color: #334155; }
+  .contrib {
+    color: #2563eb;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .contrib:hover { text-decoration: underline; }
+
+  /* ---------- Unique contributors list ---------- */
+  .contributors-section { margin-bottom: 44px; }
+  .unique-contributors { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #f8fafc;
+    color: #2563eb;
+    font-size: 13px;
+    text-decoration: none;
+  }
+  a.chip:hover { background: #eef2ff; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Active Repositories in: Quality Report</h1>
+  <p class="subtitle">Pitfalls, warnings and contributors across the active repositories
+    &middot; generated <span id="generated">2026-09-23T14:13:40.662134+00:00</span></p>
+
+  <p class="intro">This is a report of active OEG repositories in  <a href="https://github.com/oeg-upm">OEG-UPM org</a> on github, out of 342 repositories
+    , 39 were found active. A repository is considered <strong>active</strong> when any of three
+    publicly visible GitHub signals (its <strong>last push</strong>, <strong>most recent pull request</strong>, or
+    <strong>latest release</strong>) occurred within the last <strong>6 months</strong>. Repositories
+    flagged as <em>archived</em> or <em>disabled</em> on GitHub are excluded regardless of
+    recent activity, and only the repositories classified as active are analysed here.</p>
+
+  <section class="cards-section">
+    <h2>Overview</h2>
+    <div class="htree-scroll">
+      <div class="htree">
+        <div class="card root">
+          <div class="label"><span class="dot"></span>Active repositories</div>
+          <div class="value">39</div>
+        </div>
+
+        <div class="conn conn-root">
+          <span class="v"></span>
+          <span class="h h-mid"></span>
+          <span class="h h-top"></span>
+          <span class="h h-bottom"></span>
+        </div>
+
+        <div class="card top">
+          <div class="label">Pitfalls &amp; warnings detected</div>
+          <div class="value">13</div>
+          <div class="meta">5 pitfalls &middot; 16 warnings</div>
+        </div>
+
+        <div class="conn conn-top">
+          <span class="h"></span>
+        </div>
+
+        <div class="card unique">
+          <div class="label">Unique contributors<br>(repos with findings)</div>
+          <div class="value">39</div>
+        </div>
+
+        <div class="card bottom">
+          <div class="label">Repositories without pitfalls / warnings</div>
+          <div class="value">26</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contributors-section">
+    <h2>Unique contributors (repos with findings): 39</h2>
+    <div class="unique-contributors">
+<a class="chip" href="https://github.com/albaizq" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">albaizq</a>
+<a class="chip" href="https://github.com/alberto-upm" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">alberto-upm</a>
+<a class="chip" href="https://github.com/AlvaroCasasus" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">AlvaroCasasus</a>
+<a class="chip" href="https://github.com/andriumon" target="_blank" rel="noopener" title="Contributes to 2 repositories with findings">andriumon</a>
+<a class="chip" href="https://github.com/Arr0y0" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">Arr0y0</a>
+<a class="chip" href="https://github.com/bacachoddy" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">bacachoddy</a>
+<a class="chip" href="https://github.com/BorjaRei" target="_blank" rel="noopener" title="Contributes to 2 repositories with findings">BorjaRei</a>
+<a class="chip" href="https://github.com/dachafra" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">dachafra</a>
+<a class="chip" href="https://github.com/dakixr" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">dakixr</a>
+<a class="chip" href="https://github.com/DavidGonzalezFernandez" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">DavidGonzalezFernandez</a>
+<a class="chip" href="https://github.com/DCY1117" target="_blank" rel="noopener" title="Contributes to 2 repositories with findings">DCY1117</a>
+<a class="chip" href="https://github.com/apps/dependabot" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">dependabot[bot]</a>
+<a class="chip" href="https://github.com/dgarijo" target="_blank" rel="noopener" title="Contributes to 6 repositories with findings">dgarijo</a>
+<a class="chip" href="https://github.com/DiegoCondeHerreros" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">DiegoCondeHerreros</a>
+<a class="chip" href="https://github.com/eamadord" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">eamadord</a>
+<a class="chip" href="https://github.com/EdmundoMori" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">EdmundoMori</a>
+<a class="chip" href="https://github.com/esgg" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">esgg</a>
+<a class="chip" href="https://github.com/francoto" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">francoto</a>
+<a class="chip" href="https://github.com/apps/github-actions" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">github-actions[bot]</a>
+<a class="chip" href="https://github.com/iguillenp" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">iguillenp</a>
+<a class="chip" href="https://github.com/javilecrin" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">javilecrin</a>
+<a class="chip" href="https://github.com/jiaaaayiiiiiii" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">jiaaaayiiiiiii</a>
+<a class="chip" href="https://github.com/juanjemdIos" target="_blank" rel="noopener" title="Contributes to 2 repositories with findings">juanjemdIos</a>
+<a class="chip" href="https://github.com/Juanma21104" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">Juanma21104</a>
+<a class="chip" href="https://github.com/Juanmaa21" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">Juanmaa21</a>
+<a class="chip" href="https://github.com/kalili99" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">kalili99</a>
+<a class="chip" href="https://github.com/louvetv" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">louvetv</a>
+<a class="chip" href="https://github.com/manwestc" target="_blank" rel="noopener" title="Contributes to 2 repositories with findings">manwestc</a>
+<a class="chip" href="https://github.com/mariapoveda" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">mariapoveda</a>
+<a class="chip" href="https://github.com/ocorcho" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">ocorcho</a>
+<a class="chip" href="https://github.com/OEG-Clark" target="_blank" rel="noopener" title="Contributes to 2 repositories with findings">OEG-Clark</a>
+<a class="chip" href="https://github.com/OnToologyUser" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">OnToologyUser</a>
+<a class="chip" href="https://github.com/paguilomanas" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">paguilomanas</a>
+<a class="chip" href="https://github.com/rgcmme" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">rgcmme</a>
+<a class="chip" href="https://github.com/salvadormartinezmoreno-hub" target="_blank" rel="noopener" title="Contributes to 2 repositories with findings">salvadormartinezmoreno-hub</a>
+<a class="chip" href="https://github.com/Serge3006" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">Serge3006</a>
+<a class="chip" href="https://github.com/SergioZSZ" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">SergioZSZ</a>
+<a class="chip" href="https://github.com/Str3am786" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">Str3am786</a>
+<a class="chip" href="https://github.com/W-Free" target="_blank" rel="noopener" title="Contributes to 1 repository with findings">W-Free</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Repositories</h2>
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Repository</th>
+            <th>Pitfalls</th>
+            <th>Warnings</th>
+            <th>Contributors</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr><td class="repo"><a href="https://github.com/dgarijo/Widoco" target="_blank" rel="noopener">dgarijo/Widoco</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a>, <a class="contrib" href="https://github.com/apps/dependabot" target="_blank" rel="noopener">dependabot[bot]</a>, <a class="contrib" href="https://github.com/jgeluk" target="_blank" rel="noopener">jgeluk</a>, <a class="contrib" href="https://github.com/Zack-83" target="_blank" rel="noopener">Zack-83</a>, <a class="contrib" href="https://github.com/vChavezB" target="_blank" rel="noopener">vChavezB</a>, <a class="contrib" href="https://github.com/binfalse" target="_blank" rel="noopener">binfalse</a>, <a class="contrib" href="https://github.com/renefritze" target="_blank" rel="noopener">renefritze</a>, <a class="contrib" href="https://github.com/almudenaris" target="_blank" rel="noopener">almudenaris</a>, <a class="contrib" href="https://github.com/pmcb55" target="_blank" rel="noopener">pmcb55</a>, <a class="contrib" href="https://github.com/seralf" target="_blank" rel="noopener">seralf</a>, <a class="contrib" href="https://github.com/janvlug" target="_blank" rel="noopener">janvlug</a>, <a class="contrib" href="https://github.com/kartgk" target="_blank" rel="noopener">kartgk</a>, <a class="contrib" href="https://github.com/mariapoveda" target="_blank" rel="noopener">mariapoveda</a>, <a class="contrib" href="https://github.com/neeohw" target="_blank" rel="noopener">neeohw</a>, <a class="contrib" href="https://github.com/ccamel" target="_blank" rel="noopener">ccamel</a>, <a class="contrib" href="https://github.com/MikiDi" target="_blank" rel="noopener">MikiDi</a>, <a class="contrib" href="https://github.com/SirkoS" target="_blank" rel="noopener">SirkoS</a>, <a class="contrib" href="https://github.com/rpietzsch" target="_blank" rel="noopener">rpietzsch</a>, <a class="contrib" href="https://github.com/ioggstream" target="_blank" rel="noopener">ioggstream</a>, <a class="contrib" href="https://github.com/paulmillar" target="_blank" rel="noopener">paulmillar</a>, <a class="contrib" href="https://github.com/ocorcho" target="_blank" rel="noopener">ocorcho</a>, <a class="contrib" href="https://github.com/marioscrock" target="_blank" rel="noopener">marioscrock</a>, <a class="contrib" href="https://github.com/JLLeitschuh" target="_blank" rel="noopener">JLLeitschuh</a>, <a class="contrib" href="https://github.com/T-Hellmund" target="_blank" rel="noopener">T-Hellmund</a>, <a class="contrib" href="https://github.com/Murloc6" target="_blank" rel="noopener">Murloc6</a>, <a class="contrib" href="https://github.com/BMI24" target="_blank" rel="noopener">BMI24</a>, <a class="contrib" href="https://github.com/agbeltran" target="_blank" rel="noopener">agbeltran</a>, <a class="contrib" href="https://github.com/telecsur" target="_blank" rel="noopener">telecsur</a>, <a class="contrib" href="https://github.com/HanKruiger" target="_blank" rel="noopener">HanKruiger</a>, <a class="contrib" href="https://github.com/jodischneider" target="_blank" rel="noopener">jodischneider</a>, <a class="contrib" href="https://github.com/lukaskabc" target="_blank" rel="noopener">lukaskabc</a>, <a class="contrib" href="https://github.com/maximelefrancois86" target="_blank" rel="noopener">maximelefrancois86</a>, <a class="contrib" href="https://github.com/ma-garcia" target="_blank" rel="noopener">ma-garcia</a>, <a class="contrib" href="https://github.com/psiotwo" target="_blank" rel="noopener">psiotwo</a>, <a class="contrib" href="https://github.com/Xiqinger" target="_blank" rel="noopener">Xiqinger</a>, <a class="contrib" href="https://github.com/dporto-idearium" target="_blank" rel="noopener">dporto-idearium</a>, <a class="contrib" href="https://github.com/engapa" target="_blank" rel="noopener">engapa</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/lincedu/lincedu.github.io" target="_blank" rel="noopener">lincedu/lincedu.github.io</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/cbadenes" target="_blank" rel="noopener">cbadenes</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/lincedu/modelos-ia" target="_blank" rel="noopener">lincedu/modelos-ia</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/cbadenes" target="_blank" rel="noopener">cbadenes</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/morph-kgc/morph-kgc" target="_blank" rel="noopener">morph-kgc/morph-kgc</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/arenas-guerrero-julian" target="_blank" rel="noopener">arenas-guerrero-julian</a>, <a class="contrib" href="https://github.com/achiminator" target="_blank" rel="noopener">achiminator</a>, <a class="contrib" href="https://github.com/dachafra" target="_blank" rel="noopener">dachafra</a>, <a class="contrib" href="https://github.com/ahmad88me" target="_blank" rel="noopener">ahmad88me</a>, <a class="contrib" href="https://github.com/jatoledo" target="_blank" rel="noopener">jatoledo</a>, <a class="contrib" href="https://github.com/TheRazorace" target="_blank" rel="noopener">TheRazorace</a>, <a class="contrib" href="https://github.com/LuciaCabanillasRodriguez" target="_blank" rel="noopener">LuciaCabanillasRodriguez</a>, <a class="contrib" href="https://github.com/sanmai-NL" target="_blank" rel="noopener">sanmai-NL</a>, <a class="contrib" href="https://github.com/StephaneBranly" target="_blank" rel="noopener">StephaneBranly</a>, <a class="contrib" href="https://github.com/JorgeRianho" target="_blank" rel="noopener">JorgeRianho</a>, <a class="contrib" href="https://github.com/ocorcho" target="_blank" rel="noopener">ocorcho</a>, <a class="contrib" href="https://github.com/julianvz6" target="_blank" rel="noopener">julianvz6</a>, <a class="contrib" href="https://github.com/lapkinvladimir" target="_blank" rel="noopener">lapkinvladimir</a>, <a class="contrib" href="https://github.com/OzzyTao" target="_blank" rel="noopener">OzzyTao</a>, <a class="contrib" href="https://github.com/mielvds" target="_blank" rel="noopener">mielvds</a>, <a class="contrib" href="https://github.com/isaacnoya" target="_blank" rel="noopener">isaacnoya</a>, <a class="contrib" href="https://github.com/christophbrosch" target="_blank" rel="noopener">christophbrosch</a>, <a class="contrib" href="https://github.com/Spothedog1" target="_blank" rel="noopener">Spothedog1</a>, <a class="contrib" href="https://github.com/ershimen" target="_blank" rel="noopener">ershimen</a>, <a class="contrib" href="https://github.com/pawelostr" target="_blank" rel="noopener">pawelostr</a>, <a class="contrib" href="https://github.com/david-martinez-garcia" target="_blank" rel="noopener">david-martinez-garcia</a>, <a class="contrib" href="https://github.com/DylanVanAssche" target="_blank" rel="noopener">DylanVanAssche</a>, <a class="contrib" href="https://github.com/eltociear" target="_blank" rel="noopener">eltociear</a>, <a class="contrib" href="https://github.com/janosmeszaros" target="_blank" rel="noopener">janosmeszaros</a>, <a class="contrib" href="https://github.com/mabounassif" target="_blank" rel="noopener">mabounassif</a>, <a class="contrib" href="https://github.com/bollwyvl" target="_blank" rel="noopener">bollwyvl</a>, <a class="contrib" href="https://github.com/tobiaswjohn" target="_blank" rel="noopener">tobiaswjohn</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/morph-kgc/morph-kgc-docs" target="_blank" rel="noopener">morph-kgc/morph-kgc-docs</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/arenas-guerrero-julian" target="_blank" rel="noopener">arenas-guerrero-julian</a>, <a class="contrib" href="https://github.com/redmer" target="_blank" rel="noopener">redmer</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/BenchmarkingML4KGEmodelcards" target="_blank" rel="noopener">oeg-upm/BenchmarkingML4KGEmodelcards</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/eamadord" target="_blank" rel="noopener">eamadord</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/BO2DM" target="_blank" rel="noopener">oeg-upm/BO2DM</a></td><td><span class="na">N/A</span></td><td><div class="badges"><span class="badge warning" title="Checks programming language declarations in codemeta.json to see if they lack specific version numbers.">W004</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/Serge3006" target="_blank" rel="noopener">Serge3006</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/cq4oe-benchmark" target="_blank" rel="noopener">oeg-upm/cq4oe-benchmark</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/OEG-Clark" target="_blank" rel="noopener">OEG-Clark</a>, <a class="contrib" href="https://github.com/jiaaaayiiiiiii" target="_blank" rel="noopener">jiaaaayiiiiiii</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a>, <a class="contrib" href="https://github.com/ClarkWang0519" target="_blank" rel="noopener">ClarkWang0519</a>, <a class="contrib" href="https://github.com/mariapoveda" target="_blank" rel="noopener">mariapoveda</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/dia-conversational-agent" target="_blank" rel="noopener">oeg-upm/dia-conversational-agent</a></td><td><span class="na">N/A</span></td><td><div class="badges"><span class="badge warning" title="Analyzes software requirements in metadata to see if they lack explicit version constraints.">W001</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/Juanma21104" target="_blank" rel="noopener">Juanma21104</a>, <a class="contrib" href="https://github.com/AlvaroCasasus" target="_blank" rel="noopener">AlvaroCasasus</a>, <a class="contrib" href="https://github.com/ocorcho" target="_blank" rel="noopener">ocorcho</a>, <a class="contrib" href="https://github.com/bacachoddy" target="_blank" rel="noopener">bacachoddy</a>, <a class="contrib" href="https://github.com/paguilomanas" target="_blank" rel="noopener">paguilomanas</a>, <a class="contrib" href="https://github.com/Juanmaa21" target="_blank" rel="noopener">Juanmaa21</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/fair_ontologies" target="_blank" rel="noopener">oeg-upm/fair_ontologies</a></td><td><span class="na">N/A</span></td><td><div class="badges"><span class="badge warning" title="Analyzes software requirements in metadata to see if they lack explicit version constraints.">W001</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a>, <a class="contrib" href="https://github.com/juanjemdIos" target="_blank" rel="noopener">juanjemdIos</a>, <a class="contrib" href="https://github.com/apps/github-actions" target="_blank" rel="noopener">github-actions[bot]</a>, <a class="contrib" href="https://github.com/mariapoveda" target="_blank" rel="noopener">mariapoveda</a>, <a class="contrib" href="https://github.com/kalili99" target="_blank" rel="noopener">kalili99</a>, <a class="contrib" href="https://github.com/andriumon" target="_blank" rel="noopener">andriumon</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/FAIR-Research-Object" target="_blank" rel="noopener">oeg-upm/FAIR-Research-Object</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/esgg" target="_blank" rel="noopener">esgg</a>, <a class="contrib" href="https://github.com/BenitezDev" target="_blank" rel="noopener">BenitezDev</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a>, <a class="contrib" href="https://github.com/ocorcho" target="_blank" rel="noopener">ocorcho</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/GAP-KGE" target="_blank" rel="noopener">oeg-upm/GAP-KGE</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/erick4556" target="_blank" rel="noopener">erick4556</a>, <a class="contrib" href="https://github.com/Oppenheimer22" target="_blank" rel="noopener">Oppenheimer22</a>, <a class="contrib" href="https://github.com/eamadord" target="_blank" rel="noopener">eamadord</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/GrOwEr" target="_blank" rel="noopener">oeg-upm/GrOwEr</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/jarueda-oeg" target="_blank" rel="noopener">jarueda-oeg</a>, <a class="contrib" href="https://github.com/GenEars" target="_blank" rel="noopener">GenEars</a>, <a class="contrib" href="https://github.com/Sergio-Carulli" target="_blank" rel="noopener">Sergio-Carulli</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/INELOD-Catalogue" target="_blank" rel="noopener">oeg-upm/INELOD-Catalogue</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/DiegoCondeHerreros" target="_blank" rel="noopener">DiegoCondeHerreros</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/inesdata-website" target="_blank" rel="noopener">oeg-upm/inesdata-website</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/crisana1" target="_blank" rel="noopener">crisana1</a>, <a class="contrib" href="https://github.com/carlos-ruiz-moreno" target="_blank" rel="noopener">carlos-ruiz-moreno</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a>, <a class="contrib" href="https://github.com/ralcazar-oeg" target="_blank" rel="noopener">ralcazar-oeg</a>, <a class="contrib" href="https://github.com/JPardo08" target="_blank" rel="noopener">JPardo08</a>, <a class="contrib" href="https://github.com/emontiel" target="_blank" rel="noopener">emontiel</a>, <a class="contrib" href="https://github.com/SPabloCalleja" target="_blank" rel="noopener">SPabloCalleja</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/IPPCP-Ontology" target="_blank" rel="noopener">oeg-upm/IPPCP-Ontology</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/LuciaSG99" target="_blank" rel="noopener">LuciaSG99</a>, <a class="contrib" href="https://github.com/OnToologyUser" target="_blank" rel="noopener">OnToologyUser</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/LinkedOpenDataINE" target="_blank" rel="noopener">oeg-upm/LinkedOpenDataINE</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/DiegoCondeHerreros" target="_blank" rel="noopener">DiegoCondeHerreros</a>, <a class="contrib" href="https://github.com/isaacnoya" target="_blank" rel="noopener">isaacnoya</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/maseo" target="_blank" rel="noopener">oeg-upm/maseo</a></td><td><div class="badges"><span class="badge pitfall" title="Compares the version found in the metadata file with the latest repository release tag.">P001</span></div></td><td><div class="badges"><span class="badge warning" title="Analyzes software requirements in metadata to see if they lack explicit version constraints.">W001</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/jiaaaayiiiiiii" target="_blank" rel="noopener">jiaaaayiiiiiii</a>, <a class="contrib" href="https://github.com/OEG-Clark" target="_blank" rel="noopener">OEG-Clark</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/mustdrifter" target="_blank" rel="noopener">oeg-upm/mustdrifter</a></td><td><div class="badges"><span class="badge pitfall" title="Compares the version found in the metadata file with the latest repository release tag.">P001</span></div></td><td><div class="badges"><span class="badge warning" title="Analyzes software requirements in metadata to see if they lack explicit version constraints.">W001</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/iguillenp" target="_blank" rel="noopener">iguillenp</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/NEUROGRAPH" target="_blank" rel="noopener">oeg-upm/NEUROGRAPH</a></td><td><span class="na">N/A</span></td><td><div class="badges"><span class="badge warning" title="Analyzes software requirements in metadata to see if they lack explicit version constraints.">W001</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/W-Free" target="_blank" rel="noopener">W-Free</a>, <a class="contrib" href="https://github.com/alberto-upm" target="_blank" rel="noopener">alberto-upm</a>, <a class="contrib" href="https://github.com/eamadord" target="_blank" rel="noopener">eamadord</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/oeg-service-status" target="_blank" rel="noopener">oeg-upm/oeg-service-status</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/apps/github-actions" target="_blank" rel="noopener">github-actions[bot]</a>, <a class="contrib" href="https://github.com/esgg" target="_blank" rel="noopener">esgg</a>, <a class="contrib" href="https://github.com/juanjemdIos" target="_blank" rel="noopener">juanjemdIos</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/ontologia-miUrba" target="_blank" rel="noopener">oeg-upm/ontologia-miUrba</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/LuciaSG99" target="_blank" rel="noopener">LuciaSG99</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/Ontology-governance-framework" target="_blank" rel="noopener">oeg-upm/Ontology-governance-framework</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/LuciaSG99" target="_blank" rel="noopener">LuciaSG99</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/OWLChangeOntology" target="_blank" rel="noopener">oeg-upm/OWLChangeOntology</a></td><td><span class="na">N/A</span></td><td><div class="badges"><span class="badge warning" title="Analyzes software requirements in metadata to see if they lack explicit version constraints.">W001</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/DiegoCondeHerreros" target="_blank" rel="noopener">DiegoCondeHerreros</a>, <a class="contrib" href="https://github.com/OnToologyUser" target="_blank" rel="noopener">OnToologyUser</a>, <a class="contrib" href="https://github.com/dachafra" target="_blank" rel="noopener">dachafra</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/p2mc" target="_blank" rel="noopener">oeg-upm/p2mc</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/SergioZSZ" target="_blank" rel="noopener">SergioZSZ</a>, <a class="contrib" href="https://github.com/eamadord" target="_blank" rel="noopener">eamadord</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a>, <a class="contrib" href="https://github.com/Oppenheimer22" target="_blank" rel="noopener">Oppenheimer22</a>, <a class="contrib" href="https://github.com/erick4556" target="_blank" rel="noopener">erick4556</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/rsecon26-codemeta" target="_blank" rel="noopener">oeg-upm/rsecon26-codemeta</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/esgg" target="_blank" rel="noopener">esgg</a>, <a class="contrib" href="https://github.com/Anas-Elhounsri" target="_blank" rel="noopener">Anas-Elhounsri</a>, <a class="contrib" href="https://github.com/apps/github-actions" target="_blank" rel="noopener">github-actions[bot]</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/rsfc" target="_blank" rel="noopener">oeg-upm/rsfc</a></td><td><span class="na">N/A</span></td><td><div class="badges"><span class="badge warning" title="Analyzes software requirements in metadata to see if they lack explicit version constraints.">W001</span><span class="badge warning" title="Checks programming language declarations in codemeta.json to see if they lack specific version numbers.">W004</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/andriumon" target="_blank" rel="noopener">andriumon</a>, <a class="contrib" href="https://github.com/juanjemdIos" target="_blank" rel="noopener">juanjemdIos</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a>, <a class="contrib" href="https://github.com/francoto" target="_blank" rel="noopener">francoto</a>, <a class="contrib" href="https://github.com/louvetv" target="_blank" rel="noopener">louvetv</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/rsfc-action" target="_blank" rel="noopener">oeg-upm/rsfc-action</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/andriumon" target="_blank" rel="noopener">andriumon</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/rsfc-service" target="_blank" rel="noopener">oeg-upm/rsfc-service</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/andriumon" target="_blank" rel="noopener">andriumon</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/saint-experiments-wp2-wp4" target="_blank" rel="noopener">oeg-upm/saint-experiments-wp2-wp4</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/jatoledo" target="_blank" rel="noopener">jatoledo</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/soca" target="_blank" rel="noopener">oeg-upm/soca</a></td><td><span class="na">N/A</span></td><td><div class="badges"><span class="badge warning" title="Analyzes software requirements in metadata to see if they lack explicit version constraints.">W001</span><span class="badge warning" title="Checks programming language declarations in codemeta.json to see if they lack specific version numbers.">W004</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/dakixr" target="_blank" rel="noopener">dakixr</a>, <a class="contrib" href="https://github.com/Str3am786" target="_blank" rel="noopener">Str3am786</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a>, <a class="contrib" href="https://github.com/Arr0y0" target="_blank" rel="noopener">Arr0y0</a>, <a class="contrib" href="https://github.com/esgg" target="_blank" rel="noopener">esgg</a>, <a class="contrib" href="https://github.com/SergioZSZ" target="_blank" rel="noopener">SergioZSZ</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/soel-site" target="_blank" rel="noopener">oeg-upm/soel-site</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a>, <a class="contrib" href="https://github.com/mariapoveda" target="_blank" rel="noopener">mariapoveda</a>, <a class="contrib" href="https://github.com/andriumon" target="_blank" rel="noopener">andriumon</a>, <a class="contrib" href="https://github.com/jiaaaayiiiiiii" target="_blank" rel="noopener">jiaaaayiiiiiii</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/solarchem-corpus" target="_blank" rel="noopener">oeg-upm/solarchem-corpus</a></td><td><span class="na">N/A</span></td><td><div class="badges"><span class="badge warning" title="Checks programming language declarations in codemeta.json to see if they lack specific version numbers.">W004</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/OEG-Clark" target="_blank" rel="noopener">OEG-Clark</a>, <a class="contrib" href="https://github.com/dgarijo" target="_blank" rel="noopener">dgarijo</a>, <a class="contrib" href="https://github.com/apps/dependabot" target="_blank" rel="noopener">dependabot[bot]</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/teresia-annotators" target="_blank" rel="noopener">oeg-upm/teresia-annotators</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/JPardo08" target="_blank" rel="noopener">JPardo08</a>, <a class="contrib" href="https://github.com/SPabloCalleja" target="_blank" rel="noopener">SPabloCalleja</a>, <a class="contrib" href="https://github.com/paula-diez" target="_blank" rel="noopener">paula-diez</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/teresia-brat-server" target="_blank" rel="noopener">oeg-upm/teresia-brat-server</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/JPardo08" target="_blank" rel="noopener">JPardo08</a>, <a class="contrib" href="https://github.com/paula-diez" target="_blank" rel="noopener">paula-diez</a>, <a class="contrib" href="https://github.com/pmchozas" target="_blank" rel="noopener">pmchozas</a>, <a class="contrib" href="https://github.com/SPabloCalleja" target="_blank" rel="noopener">SPabloCalleja</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/Themis" target="_blank" rel="noopener">oeg-upm/Themis</a></td><td><div class="badges"><span class="badge pitfall" title="Compares the version found in the metadata file with the latest repository release tag.">P001</span></div></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/albaizq" target="_blank" rel="noopener">albaizq</a>, <a class="contrib" href="https://github.com/rgcmme" target="_blank" rel="noopener">rgcmme</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/TINTOlib" target="_blank" rel="noopener">oeg-upm/TINTOlib</a></td><td><div class="badges"><span class="badge pitfall" title="Compares the version found in the metadata file with the latest repository release tag.">P001</span><span class="badge pitfall" title="Compares the version field in codemeta.json against the package manager version.">P017</span></div></td><td><div class="badges"><span class="badge warning" title="Analyzes software requirements in metadata to see if they lack explicit version constraints.">W001</span><span class="badge warning" title="Compares the dateModified field against the date of the latest release of the actual repository.">W002</span><span class="badge warning" title="Checks programming language declarations in codemeta.json to see if they lack specific version numbers.">W004</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/manwestc" target="_blank" rel="noopener">manwestc</a>, <a class="contrib" href="https://github.com/DCY1117" target="_blank" rel="noopener">DCY1117</a>, <a class="contrib" href="https://github.com/DavidGonzalezFernandez" target="_blank" rel="noopener">DavidGonzalezFernandez</a>, <a class="contrib" href="https://github.com/BorjaRei" target="_blank" rel="noopener">BorjaRei</a>, <a class="contrib" href="https://github.com/javilecrin" target="_blank" rel="noopener">javilecrin</a>, <a class="contrib" href="https://github.com/salvadormartinezmoreno-hub" target="_blank" rel="noopener">salvadormartinezmoreno-hub</a>, <a class="contrib" href="https://github.com/EdmundoMori" target="_blank" rel="noopener">EdmundoMori</a></div></td></tr>
+<tr class="has-findings"><td class="repo"><a href="https://github.com/oeg-upm/TINTOlib-Documentation" target="_blank" rel="noopener">oeg-upm/TINTOlib-Documentation</a></td><td><span class="na">N/A</span></td><td><div class="badges"><span class="badge warning" title="Analyzes software requirements in metadata to see if they lack explicit version constraints.">W001</span></div></td><td><div class="contribs"><a class="contrib" href="https://github.com/DCY1117" target="_blank" rel="noopener">DCY1117</a>, <a class="contrib" href="https://github.com/BorjaRei" target="_blank" rel="noopener">BorjaRei</a>, <a class="contrib" href="https://github.com/manwestc" target="_blank" rel="noopener">manwestc</a>, <a class="contrib" href="https://github.com/salvadormartinezmoreno-hub" target="_blank" rel="noopener">salvadormartinezmoreno-hub</a></div></td></tr>
+<tr><td class="repo"><a href="https://github.com/oeg-upm/web-oeg" target="_blank" rel="noopener">oeg-upm/web-oeg</a></td><td><span class="na">N/A</span></td><td><span class="na">N/A</span></td><td><div class="contribs"><a class="contrib" href="https://github.com/JARG-FI" target="_blank" rel="noopener">JARG-FI</a>, <a class="contrib" href="https://github.com/LauCamacho" target="_blank" rel="noopener">LauCamacho</a>, <a class="contrib" href="https://github.com/dacilm" target="_blank" rel="noopener">dacilm</a>, <a class="contrib" href="https://github.com/ralcazar-oeg" target="_blank" rel="noopener">ralcazar-oeg</a></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
